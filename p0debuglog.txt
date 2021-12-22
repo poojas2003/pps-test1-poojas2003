@@ -1,4 +1,1 @@
  
-gcc -g p0original.c
- ./a.out
-my name is pooja 
