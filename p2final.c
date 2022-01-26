@@ -1,12 +1,14 @@
+ //add of two numbers using 4 functions  by pass by value method
+
 #include<stdio.h>
 int input()
 {
-  int a;
-  printf("enter the value of a \n");
+ int a;
+  printf("enter the value of a\n");
   scanf("%d" ,&a);
   return a;
 }
-int find_sum(int a,int b)
+int add(int a,int b)
 { 
 int sum;
 sum=a+b;
@@ -21,7 +23,7 @@ int main()
   int x,y,z;
 x=input();
 y=input();
-z=find_sum(x,y);
+z=add(x,y);
 output(x,y,z);
 return 0;
 }

@@ -1,24 +1,10 @@
-//add two numbers using 4 functions using pass by value
-
-#include<stdio.h> 
-void input(int *a,int *b)    //function definition
-{
-printf("enter two number\n");
-scanf("%d%d",a,b);
-}
-void add(int a,int b,int *sum)    //function definition
-{
-  *sum=a+b;
-}
-void output(int a,int b,int sum)
-{
-  printf("%d+%d=%d\n",a,b,sum);
-}
+#include<stdio.h>
 int main()
 {
-  int a,b,sum;
-  input(&a,&b);            //pass by reference
-  add(a,b,&sum);           //pass by value(a,b) and reference(sum)
-  output(a,b,sum);         //pass by value
+ int a,b,c;
+  printf("enter any two numbers\n");
+  scanf("%d%d",&a,&b);
+  c=a+b;
+  printf("%d+%d=%d",a,b,c);
   return 0;
 }
