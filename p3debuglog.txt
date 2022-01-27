@@ -1,9 +1,9 @@
 gcc -g p3final.c
  ./a.out
 enter the two numbers
-6 
+8
 9
-6+9=15
+8+9=17
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -30,17 +30,38 @@ Breakpoint 1, main () at p3final.c:17
 17  {
 (gdb) n
 19    input(&x,&y);
+(gdb) s
+input (a=0x7ffdc5156d1c, b=0x7ffdc5156d20) at p3final.c:4
+4     printf("enter the two numbers\n");
 (gdb) n
 enter the two numbers
-8
-9
-20    add(x,y,&ans);
+5     scanf("%d %d",a,b);
 (gdb) n
+8
+5
+6     return;
+(gdb) n
+7   }
+(gdb) n
+main () at p3final.c:20
+20    add(x,y,&ans);
+(gdb) s
+add (a=8, b=5, sum=0x7ffdc5156d24) at p3final.c:10
+10    *sum=a+b;
+(gdb) n
+11  }
+(gdb) n
+main () at p3final.c:21
 21    output(x,y,ans);
 (gdb) n
-8+9=17
+8+5=13
 22  }
+(gdb) n
+__libc_start_main (main=0x5616438007f4 <main>, argc=1, argv=0x7ffdc5156e18, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffdc5156e08) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
 (gdb) c
 Continuing.
-[Inferior 1 (process 271) exited normally]
+[Inferior 1 (process 102) exited normally]
 (gdb) 
