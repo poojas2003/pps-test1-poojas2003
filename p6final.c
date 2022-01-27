@@ -22,9 +22,9 @@ void output(int n,int sum)
 }
   int main()
 {
-  int n,sm;
+  int n,sum;
   n=input();
   sm=sum_n(n);
-  output(n,sm);
+  output(n,sum);
   return 0;
 }
