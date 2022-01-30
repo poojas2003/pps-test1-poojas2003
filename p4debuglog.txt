@@ -1,9 +1,4 @@
- ./a.out
-enter the three numbers
-5
-9
-8
-9 is the largest of the three
+ gcc -g p4original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -21,29 +16,348 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x7f3: file p4final.c, line 36.
+Breakpoint 1 at 0x7fa: file p4original.c, line 21.
 (gdb) r
-Starting program: /home/runner/pps-test1-poojas2003-20/a.out 
+Starting program: /home/runner/pps-test1-poojas2003-49/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4final.c:36
-36    printf("enter the three numbers\n");
+Breakpoint 1, main () at p4original.c:21
+21    a=input();
+(gdb) s
+input () at p4original.c:12
+12  {
 (gdb) n
-enter the three numbers
-37    a=input();
+14    printf("enter three numbers\n");
 (gdb) n
-n
-38    b=input();
+enter three numbers
+15    scanf("%d",&a);
 (gdb) n
-39    c=input();
+9
+16    return a;
+(gdb) p a
+$1 = 9
 (gdb) n
-40    large=cmp(a,b,c);
+17  }
 (gdb) n
-41    printf("%d is the largest of the three\n",large);
+main () at p4original.c:22
+22    b=input();
+(gdb) s
+input () at p4original.c:12
+12  {
 (gdb) n
-32766 is the largest of the three
-42  }
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+6
+16    return a;
+(gdb) p a
+$2 = 6
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:23
+23    c=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+4
+16    return a;
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:24
+24     large=cmp(a,b,c);
+(gdb) s
+cmp (a=9, b=6, c=4) at p4original.c:4
+4     if(a>b && a>c)
+(gdb) n
+5     return a;
+(gdb) p a
+$3 = 9
+ 
+ gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7fa: file p4original.c, line 21.
+(gdb) r
+Starting program: /home/runner/pps-test1-poojas2003-49/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:21
+21    a=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+9
+16    return a;
+(gdb) p a
+$1 = 9
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:22
+22    b=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+5
+16    return a;
+(gdb) p a
+$2 = 5
+(gdb) n
+17  }
+(gdb) n
+ 
+ gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7fa: file p4original.c, line 21.
+(gdb) r
+Starting program: /home/runner/pps-test1-poojas2003-49/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:21
+warning: Source file is more recent than executable.
+21    a=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+8
+16    return a;
+(gdb) p a
+$1 = 8
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:22
+22    b=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+2
+16    return a;
+(gdb) p a
+$2 = 2
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:23
+23    c=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+7
+16    return a;
+(gdb) p a
+$3 = 7
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:24
+24     large=cmp(a,b,c);
+(gdb) s
+cmp (a=8, b=2, c=7) at p4original.c:4
+4     if(a>b && a>c)
+(gdb) n
+5     return a;
+(gdb) p a
+$4 = 8
+(gdb) n
+10  }
+ 
+ gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+ 
+ gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7fa: file p4original.c, line 21.
+(gdb) r
+Starting program: /home/runner/pps-test1-poojas2003-49/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:21
+21    a=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+5
+16    return a;
+(gdb) p a
+$1 = 5
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:22
+22    b=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+6
+16    return a;
+(gdb) p a
+$2 = 6
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:23
+23    c=input();
+(gdb) s
+input () at p4original.c:12
+12  {
+(gdb) n
+14    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+15    scanf("%d",&a);
+(gdb) n
+5
+16    return a;
+(gdb) p a
+$3 = 5
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:24
+24     large=cmp(a,b,c);
+(gdb) s
+cmp (a=5, b=6, c=5) at p4original.c:4
+4     if(a>b && a>c)
+(gdb) n
+6     else if(b>c)
+(gdb) n
+7     return b;
+(gdb) p b
+$4 = 6
+(gdb) n
+10  }
+(gdb) n
+main () at p4original.c:25
+25    printf("%d is the large of three\n",large);
+(gdb) n
+6 is the large of three
+26    return large;
+(gdb) n
+27  }(gdb) p large
+$5 = 6
+(gdb) n
+__libc_start_main (main=0x55e1bce007f2 <main>, argc=1, argv=0x7ffc2c47b748, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffc2c47b738) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
 (gdb) c
 Continuing.
-[Inferior 1 (process 410) exited normally]
+[Inferior 1 (process 270) exited with code 06]
+(gdb) c
+The program is not being run.
 (gdb) 
