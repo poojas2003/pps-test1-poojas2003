@@ -1,0 +1,141 @@
+gcc -g p5original.c
+ ./a.out
+enter three numbers
+7 5 6                                       
+7 is large of all three numbers
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x800: file p5original.c, line 17.
+(gdb) r
+Starting program: /home/runner/pps-test1-poojas2003-49/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5original.c:17
+17   {
+(gdb) n
+19      input (&a,&b,&c);
+(gdb) s
+input (a=0x7ffea6e7da68, b=0x7ffea6e7da6c, c=0x7ffea6e7da70) at p5original.c:13
+13    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+14    scanf("%d %d %d" ,a,b,c);
+(gdb) n
+8
+9
+5
+15  }
+(gdb) p large
+No symbol "large" in current context.
+(gdb) n
+main () at p5original.c:20
+20      cmp(a,b,c,&large);
+(gdb) s
+cmp (a=8, b=9, c=5, large=0x7ffea6e7da74) at p5original.c:4
+4   if(a>b && a>c)
+(gdb) n
+6   else if(b>c)
+(gdb) n
+7   *large=b;
+(gdb) n
+10  }
+(gdb) p b
+$1 = 9
+ 
+ gcc -g p5original.c
+ ./a.out
+enter three numbers
+4
+5
+6
+6 is large of all three numbers
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x800: file p5original.c, line 17.
+(gdb) r
+Starting program: /home/runner/pps-test1-poojas2003-49/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5original.c:17
+17   {
+(gdb) n
+19      input (&a,&b,&c);
+(gdb) s
+input (a=0x7fff6ba297b8, b=0x7fff6ba297bc, c=0x7fff6ba297c0) at p5original.c:13
+13    printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+14    scanf("%d %d %d" ,a,b,c);
+(gdb) n
+4
+5
+6
+15  }
+(gdb) p a
+$1 = (int *) 0x7fff6ba297b8
+(gdb) n
+main () at p5original.c:20
+20      cmp(a,b,c,&large);
+(gdb) s
+cmp (a=4, b=5, c=6, large=0x7fff6ba297c4) at p5original.c:4
+4   if(a>b && a>c)
+(gdb) n
+6   else if(b>c)
+(gdb) n
+9   *large=c;
+(gdb) n
+10  }
+(gdb) p c
+$2 = 6
+(gdb) p a
+$3 = 4
+(gdb) p b
+$4 = 5
+(gdb) n
+main () at p5original.c:21
+21      printf("%d is large of all three numbers\n",large);
+(gdb) n
+6 is large of all three numbers
+22      return 0;
+(gdb) n
+23   }(gdb) p large
+$5 = 6
+(gdb) n
+__libc_start_main (main=0x5593b46007f8 <main>, argc=1, argv=0x7fff6ba298b8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff6ba298a8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) c
+Continuing.
+[Inferior 1 (process 308) exited normally]
+(gdb) 
