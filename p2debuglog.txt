@@ -1,10 +1,4 @@
-gcc -g p2final.c
- ./a.out
-enter the value of a
-4
-enter the value of a
-5
-sum of 4 +5 is 9
+gcc -g p2original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -22,71 +16,139 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x810: file p2final.c, line 24.
+Breakpoint 1 at 0x810: file p2original.c, line 21.
 (gdb) r
-Starting program: /home/runner/pps-test1-poojas2003-43/a.out 
+Starting program: /home/runner/pps-test1-poojas2003-48/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p2final.c:24
-24  x=input();
+Breakpoint 1, main () at p2original.c:21
+21  int a=input();
 (gdb) s
-input () at p2final.c:5
-5   {
+input () at p2original.c:3
+3   {
 (gdb) n
-7     printf("enter the value of a\n");
+5     printf("enter the value of a\n");
 (gdb) n
 enter the value of a
-8     scanf("%d" ,&a);
+6     scanf("%d",&a);
 (gdb) n
-8
-9     return a;
+9
+7     return a;
 (gdb) n
-10  }
+8   }
 (gdb) n
-main () at p2final.c:25
-25  y=input();
+main () at p2original.c:22
+22  int b=input();
 (gdb) s
-input () at p2final.c:5
-5   {
+input () at p2original.c:3
+3   {
 (gdb) n
-7     printf("enter the value of a\n");
+5     printf("enter the value of a\n");
 (gdb) n
 enter the value of a
-8     scanf("%d" ,&a);
+6     scanf("%d",&a);
 (gdb) n
-6
-9     return a;
-(gdb) n
-10  }
-(gdb) n
-main () at p2final.c:26
-26  z=add(x,y);
-(gdb) s
-add (a=8, b=6) at p2final.c:14
-14  sum=a+b;
-(gdb) n
-15  return sum;
-(gdb) n
-16  }
-(gdb) n
-main () at p2final.c:27
-27  output(x,y,z);
-(gdb) s
-output (a=8, b=6, sum=14) at p2final.c:19
-19    printf("sum of %d +%d is %d\n" ,a,b,sum);
-(gdb) n
-sum of 8 +6 is 14
-20  }
-(gdb) n
-main () at p2final.c:28
  
- gcc -g p2final.c
- ./a.out
-enter the value of a
-4
-enter the value of a
+ gcc -g p2original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+ 
+ gcc -g p2original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x810: file p2original.c, line 21.
+(gdb) r
+Starting program: /home/runner/pps-test1-poojas2003-48/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2original.c:21
+21  int a=input();
+(gdb) s
+input () at p2original.c:3
+3   {
+(gdb) n
+5     printf("enter value of a\n");
+(gdb) n
+enter value of a
+6     scanf("%d",&a);
+(gdb) n
 8
-sum of 4 +8 is 12
+7     return a;
+(gdb) p a
+$1 = 8
+(gdb) n
+8   }
+(gdb) n
+main () at p2original.c:22
+22  int b=input();
+(gdb) s
+input () at p2original.c:3
+3   {
+(gdb) n
+5     printf("enter value of a\n");
+(gdb) n
+enter value of a
+6     scanf("%d",&a);
+(gdb) n
+8
+7     return a;
+(gdb) p a
+$2 = 8
+(gdb) n
+8   }
+(gdb) n
+main () at p2original.c:23
+23  int c=add(a,b);
+(gdb) p a
+$3 = 8
+(gdb) p a
+$4 = 8
+(gdb) s
+ 
+ gcc -g p2original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+ 
+ gcc -g p2original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -104,72 +166,64 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main 
-Breakpoint 1 at 0x810: file p2final.c, line 24.
+Breakpoint 1 at 0x810: file p2original.c, line 21.
 (gdb) r
-Starting program: /home/runner/pps-test1-poojas2003-43/a.out 
+Starting program: /home/runner/pps-test1-poojas2003-48/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p2final.c:24
-24  x=input();
+Breakpoint 1, main () at p2original.c:21
+21  int a=input();
 (gdb) s
-input () at p2final.c:5
-5   {
+input () at p2original.c:3
+3   {
 (gdb) n
-7     printf("enter the value of a\n");
+5     printf("enter value of a\n");
 (gdb) n
-enter the value of a
-8     scanf("%d" ,&a);
+enter value of a
+6     scanf("%d",&a);
 (gdb) n
-9
-9     return a;
+8
+7     return a;
+(gdb) p a
+$1 = 8
 (gdb) n
-10  }
+8   }
 (gdb) n
-main () at p2final.c:25
-25  y=input();
+main () at p2original.c:22
+22  int b=input();
 (gdb) s
-input () at p2final.c:5
-5   {
+input () at p2original.c:3
+3   {
 (gdb) n
-7     printf("enter the value of a\n");
+5     printf("enter value of a\n");
 (gdb) n
-enter the value of a
-8     scanf("%d" ,&a);
+enter value of a
+6     scanf("%d",&a);
 (gdb) n
-9
-9     return a;
+2
+7     return a;
 (gdb) n
-10  }
+8   }
 (gdb) n
-main () at p2final.c:26
-26  z=add(x,y);
+main () at p2original.c:23
+23  int sum=add(a,b);
 (gdb) s
-add (a=9, b=9) at p2final.c:14
-14  sum=a+b;
+add (a=8, b=2) at p2original.c:12
+12    sum=a+b;
 (gdb) n
-15  return sum;
+13    return sum;
 (gdb) n
-16  }
+14  }
 (gdb) n
-main () at p2final.c:27
-27  output(x,y,z);
-(gdb) s
-output (a=9, b=9, sum=18) at p2final.c:19
-19    printf("sum of %d +%d is %d\n" ,a,b,sum);
+main () at p2original.c:24
+24  output(a,b,sum);
+(gdb) p sum
+$2 = 10
 (gdb) n
-sum of 9 +9 is 18
-20  }
+25  return 0;
 (gdb) n
-main () at p2final.c:28
-28  return 0;
-(gdb) n
-29  }
-(gdb) n
-__libc_start_main (main=0x556703800808 <main>, argc=1, argv=0x7ffff0a34f18, 
-    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7ffff0a34f08) at ../csu/libc-start.c:344
-344 ../csu/libc-start.c: No such file or directory.
+26  }
 (gdb) c
 Continuing.
-[Inferior 1 (process 482) exited normally]
-(gdb) 
+sum of 8 + 2 is 10[Inferior 1 (process 257) exited normally]
+(gdb) n
