@@ -1,9 +1,4 @@
-gcc -g p3final.c
- ./a.out
-enter the two numbers
-8
-9
-8+9=17
+cc -g p3original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,52 +11,59 @@ Type "show configuration" for configuration details.
 For bug reporting instructions, please see:
 <http://www.gnu.org/software/gdb/bugs/>.
 Find the GDB manual and other documentation resources online at:
+---Type <return> to continue, or q <return> to quit---c
 <http://www.gnu.org/software/gdb/documentation/>.
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x7fc: file p3final.c, line 17.
+Breakpoint 1 at 0x7fc: file p3original.c, line 18.
 (gdb) r
-Starting program: /home/runner/pps-test1-poojas2003-45/a.out 
+Starting program: /home/runner/pps-test1-poojas2003-48/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p3final.c:17
-17  {
+Breakpoint 1, main () at p3original.c:18
+18  {
 (gdb) n
-19    input(&x,&y);
+20    input(&a,&b);            //pass by reference
 (gdb) s
-input (a=0x7ffdc5156d1c, b=0x7ffdc5156d20) at p3final.c:4
-4     printf("enter the two numbers\n");
+input (a=0x7ffe3971197c, b=0x7ffe39711980) at p3original.c:6
+6   printf("enter two number\n");
 (gdb) n
-enter the two numbers
-5     scanf("%d %d",a,b);
+enter two number
+7   scanf("%d%d",a,b);
 (gdb) n
-8
 5
-6     return;
+9
+8   }
 (gdb) n
-7   }
-(gdb) n
-main () at p3final.c:20
-20    add(x,y,&ans);
+main () at p3original.c:21
+21    add(a,b,&sum);           //pass by value(a,b) and reference(sum)
 (gdb) s
-add (a=8, b=5, sum=0x7ffdc5156d24) at p3final.c:10
-10    *sum=a+b;
+add (a=5, b=9, sum=0x7ffe39711984) at p3original.c:11
+11    *sum=a+b;
+(gdb) p a
+$1 = 5
+(gdb) p b
+$2 = 9
 (gdb) n
-11  }
+12  }
 (gdb) n
-main () at p3final.c:21
-21    output(x,y,ans);
+main () at p3original.c:22
+22    output(a,b,sum);         //pass by value
+(gdb) s
+output (a=5, b=9, sum=14) at p3original.c:15
+15    printf("%d+%d=%d\n",a,b,sum);
+(gdb) p sum
+$3 = 14
 (gdb) n
-8+5=13
-22  }
+5+9=14
+16  }
 (gdb) n
-__libc_start_main (main=0x5616438007f4 <main>, argc=1, argv=0x7ffdc5156e18, 
-    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7ffdc5156e08) at ../csu/libc-start.c:344
-344 ../csu/libc-start.c: No such file or directory.
-(gdb) c
+main () at p3original.c:23
+23    return 0;
+(gdb) n
+24  }(gdb) c
 Continuing.
-[Inferior 1 (process 102) exited normally]
+[Inferior 1 (process 247) exited normally]
 (gdb) 
